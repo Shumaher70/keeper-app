@@ -1,17 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function CreateArea() {
+function CreateArea(props) {
+  const [note, setNote] = useState({
+    title: '',
+    content: '',
+  });
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    setNote((prevNote) => {
+      return {
+        ...prevNote,
+        [name]: value,
+      };
+    });
+
+    e.preventDefault();
+  }
+
+  function submitNote(e) {
+    props.onAdd(note);
+    setNote({
+      title: '',
+      content: '',
+    });
+    e.preventDefault();
+  }
+
   return (
     <div>
-      <form className="todo-form">
-        <input className="todo-form_input" name="title" placeholder="Title" />
+      <form>
+        <input
+          name="title"
+          onChange={handleChange}
+          value={note.title}
+          placeholder="Title"
+        />
         <textarea
-          className="todo-form_textarea"
           name="content"
+          onChange={handleChange}
+          value={note.content}
           placeholder="Take a note..."
           rows="3"
         />
-        <button className="todo-form_btn">Add</button>
+        <button onClick={submitNote}>Add</button>
       </form>
     </div>
   );

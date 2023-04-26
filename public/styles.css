@@ -36,11 +36,10 @@ footer p {
   color: #ccc;
 }
 .note {
-  position: relative;
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
-  padding: 10px 10px 30px 10px;
+  padding: 10px;
   width: 240px;
   margin: 16px;
   float: left;
@@ -56,63 +55,50 @@ footer p {
   word-wrap: break-word;
 }
 
-.note_btn {
-  position: absolute;
-  background-color: transparent;
-  border: none;
-  right: 10px;
-  bottom: 10px;
-  color: #f5ba13;
-  cursor: pointer;
-}
-
-.todo-form {
+.note button {
   position: relative;
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
-  width: 50%;
-  height: 150px;
-  margin: 16px;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.todo-form_textarea {
-  position: absolute;
-  padding: 0 0 0 10px;
-  width: 100%;
-  height: 70%;
+  float: right;
+  margin-right: 10px;
+  color: #f5ba13;
   border: none;
-  background-color: transparent;
-  resize: none;
-  bottom: 0;
-  outline: none;
-  font-size: 20px;
-  color: black;
-}
-
-.todo-form_input {
-  position: absolute;
-  padding: 10px;
-  width: 100%;
-  height: 30%;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  font-size: 20px;
-  color: black;
-}
-
-.todo-form_btn {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background-color: #f5ba13;
-  color: white;
-  right: 20px;
-  bottom: -20px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+
+form {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+  background-color: transparent;
+}
+form button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
 }
