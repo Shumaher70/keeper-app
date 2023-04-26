@@ -35,28 +35,28 @@ function CreateArea(props) {
 
   function heandleInput() {
     setInput(true);
+    console.log(input);
   }
 
   return (
     <div>
       <form className="create-note">
-        <input
-          onClick={heandleInput}
-          name="title"
-          onChange={handleChange}
-          value={note.title}
-          placeholder="Title"
-        />
-        <Zoom in={input}>
-          <textarea
-            style={{ display: input === false ? 'none' : null }}
-            name="content"
+        {input && (
+          <input
+            name="title"
             onChange={handleChange}
-            value={note.content}
-            placeholder="Take a note..."
-            rows="3"
+            value={note.title}
+            placeholder="Title"
           />
-        </Zoom>
+        )}
+        <textarea
+          name="content"
+          onClick={heandleInput}
+          onChange={handleChange}
+          value={note.content}
+          placeholder="Take a note..."
+          rows={input === true ? 3 : 1}
+        />
 
         <Zoom in={input}>
           <Fab onClick={submitNote}>
